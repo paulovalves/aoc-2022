@@ -27,7 +27,7 @@ func findMaxValue(arr []int) int {
 }
 
 func DayOne() int {
-	fileName := os.Args[0]
+	fileName := os.Args[1]
 
 	file, err := os.Open(fileName)
 	if err != nil {

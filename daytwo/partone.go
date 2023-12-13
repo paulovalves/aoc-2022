@@ -19,7 +19,7 @@ type Game struct {
 }
 
 func calculatePoints() int {
-	fileName := "daytwo/input"
+	fileName := "daytwo/inputpartone"
 	file, err := os.Open(fileName)
 	if err != nil {
 		panic(err)
@@ -33,9 +33,9 @@ func calculatePoints() int {
 	for scanner.Scan() {
 		el := scanner.Text()
 		l, r := splitElement(el)
-		s, n := outcome(l, r)
+		_, n := outcomePartOne(l, r)
 		sum += n
-		fmt.Printf("\n%s = %d", s, n)
+		// fmt.Printf("\n%s = %d", s, n)
 	}
 
 	/*for _, el := range arr {
@@ -45,7 +45,7 @@ func calculatePoints() int {
 	return sum
 }
 
-func outcome(left string, right string) (string, int) {
+func outcomePartOne(left string, right string) (string, int) {
 	// Rock | Rock
 	if left == "A" && right == "X" {
 		return "draw", 1 + 3
@@ -85,7 +85,7 @@ func splitElement(str string) (string, string) {
 	return left, right
 }
 
-func DayTwo() {
+func PartOne() {
 	result := calculatePoints()
 	fmt.Printf("\n\nResult: %d\n", result)
 }

@@ -7,7 +7,7 @@ import (
 )
 
 func readFile() int {
-	file, err := os.Open("daythree/input")
+	file, err := os.Open("daythree/partoneinput")
 	if err != nil {
 		panic(err)
 	}
@@ -38,14 +38,11 @@ func compareChars(left string, right string) []rune {
 		for j := 0; j < len(right); j++ {
 			if left[i] == right[j] {
 				if !contains(rune(left[i]), arr) {
-					fmt.Printf("\n%s == %s", string(left[i]), string(right[j]))
 					arr = append(arr, rune(left[i]))
-
 				}
 			}
 		}
 	}
-	// fmt.Println(h)
 	return arr
 }
 
@@ -61,24 +58,10 @@ func contains(r rune, arr []rune) bool {
 func countAll(arr []int) int {
 	result := 0
 	for _, i := range arr {
-		// fmt.Println(i)
 		if i >= 97 {
 			result += i - 96
 		} else {
 			result += i - 65 + 27
-		}
-	}
-	return result
-}
-
-func countChars(arr []rune) int {
-	result := 0
-	for i := 0; i < len(arr); i++ {
-		n := int(arr[i])
-		if n >= 97 {
-			result += n - 96
-		} else {
-			result += n - 65 + 27
 		}
 	}
 	return result

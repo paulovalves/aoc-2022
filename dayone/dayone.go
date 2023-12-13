@@ -62,7 +62,7 @@ func DayOne() int {
 	lastThree := arrResult[len(arrResult)-3:]
 
 	lt := sumArr(lastThree)
-	fmt.Println(lt)
+	fmt.Printf("LT: %d", lt)
 
 	maxFood = findMaxValue(arrResult)
 

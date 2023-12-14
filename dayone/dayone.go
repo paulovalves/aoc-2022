@@ -27,7 +27,7 @@ func findMaxValue(arr []int) int {
 }
 
 func DayOne() int {
-	fileName := os.Args[1]
+	fileName := "dayone/day-one-input.txt"
 
 	file, err := os.Open(fileName)
 	if err != nil {

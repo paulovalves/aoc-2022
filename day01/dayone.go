@@ -26,7 +26,7 @@ func findMaxValue(arr []int) int {
 	return maxValue
 }
 
-func DayOne() int {
+func DayOne() {
 	fileName := "day01/day-one-input.txt"
 
 	file, err := os.Open(fileName)
@@ -62,9 +62,8 @@ func DayOne() int {
 	lastThree := arrResult[len(arrResult)-3:]
 
 	lt := sumArr(lastThree)
-	fmt.Printf("LT: %d", lt)
 
 	maxFood = findMaxValue(arrResult)
-
-	return maxFood
+	fmt.Printf("\nDay 01 Part I: %d", maxFood)
+	fmt.Printf("\nDay 01 Part II: %d", lt)
 }

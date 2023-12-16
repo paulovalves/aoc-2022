@@ -87,5 +87,5 @@ func splitElement(str string) (string, string) {
 
 func PartOne() {
 	result := calculatePoints()
-	fmt.Printf("\n\nResult: %d\n", result)
+	fmt.Printf("\nDay 02 Part I: %d", result)
 }

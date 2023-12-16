@@ -30,7 +30,7 @@ func readFile() {
 		result += checkRange(num1, num2, num3, num4, result)
 	}
 
-	fmt.Println(result)
+	fmt.Printf("\nDay 04 Part I: %d", result)
 }
 
 func splitLine(str, sep string) (string, string) {

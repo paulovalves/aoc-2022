@@ -33,7 +33,6 @@ func readFile() int {
 
 func compareChars(left string, right string) []rune {
 	var arr []rune
-	fmt.Printf("\nleft: %s - right: %s", left, right)
 	for i := 0; i < len(left); i++ {
 		for j := 0; j < len(right); j++ {
 			if left[i] == right[j] {
@@ -69,5 +68,5 @@ func countAll(arr []int) int {
 
 func DayThree() {
 	result := readFile()
-	fmt.Printf("\n\nResultado: %d\n", result)
+	fmt.Printf("\nDay 03 Part I: %d", result)
 }

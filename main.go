@@ -5,6 +5,7 @@ import (
 	"dayone"
 	"daythree"
 	"daytwo"
+	"fmt"
 )
 
 func main() {
@@ -15,4 +16,5 @@ func main() {
 	daythree.PartTwo()
 	dayfour.PartOne()
 	dayfour.PartTwo()
+	fmt.Println("\nFIM ")
 }

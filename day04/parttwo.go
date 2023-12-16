@@ -22,7 +22,7 @@ func PartTwo() {
 		n1, n2, n3, n4 := makeNumbers(left, right)
 		result += checkNumbers(n1, n2, n3, n4)
 	}
-	fmt.Println(result)
+	fmt.Printf("\nDay 04 Part II: %d", result)
 }
 
 func checkNumbers(num1, num2, num3, num4 int) int {

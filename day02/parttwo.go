@@ -69,5 +69,5 @@ func outcomePartTwo(left string, right string) (string, int) {
 
 func PartTwo() {
 	result := readFile()
-	fmt.Printf("\n\nDay Three: %d\n", result)
+	fmt.Printf("\nDay 02 Part II: %d", result)
 }

@@ -39,7 +39,7 @@ func PartTwo() {
 	}
 
 	result := countAll(arrInts)
-	fmt.Println(result)
+	fmt.Printf("\nDay 03 Part II: %d", result)
 }
 
 func compareLineChars(lineOne, lineTwo, lineThree string) []rune {

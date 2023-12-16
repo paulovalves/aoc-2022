@@ -14,7 +14,7 @@ import (
 // outcome: 0 - lost, 3 - draw, 6 - win
 
 func readFile() int {
-	fileName := "daytwo/inputparttwo"
+	fileName := "day02/inputparttwo"
 
 	file, err := os.Open(fileName)
 	if err != nil {

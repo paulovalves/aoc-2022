@@ -8,7 +8,7 @@ import (
 )
 
 func PartTwo() {
-	file, err := os.Open("dayfour/part-two-input")
+	file, err := os.Open("day04/part-two-input")
 	if err != nil {
 		log.Fatal(err)
 	}

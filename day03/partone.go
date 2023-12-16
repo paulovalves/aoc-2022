@@ -7,7 +7,7 @@ import (
 )
 
 func readFile() int {
-	file, err := os.Open("daythree/partoneinput")
+	file, err := os.Open("day03/partoneinput")
 	if err != nil {
 		panic(err)
 	}

@@ -19,7 +19,7 @@ type Game struct {
 }
 
 func calculatePoints() int {
-	fileName := "daytwo/inputpartone"
+	fileName := "day02/inputpartone"
 	file, err := os.Open(fileName)
 	if err != nil {
 		panic(err)

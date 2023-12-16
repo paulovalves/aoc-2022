@@ -15,7 +15,7 @@ func PartOne() int {
 }
 
 func readFile() {
-	file, err := os.Open("dayfour/part-one-input")
+	file, err := os.Open("day04/part-one-input")
 	if err != nil {
 		log.Fatal(err)
 	}

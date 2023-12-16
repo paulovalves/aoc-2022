@@ -20,6 +20,8 @@ func readFile() {
 		log.Fatal(err)
 	}
 
+	defer file.Close()
+
 	var result int
 	scanner := bufio.NewScanner(file)
 

@@ -13,6 +13,8 @@ func PartTwo() {
 		log.Fatal(err)
 	}
 
+	defer file.Close()
+
 	lineOne := ""
 	lineTwo := ""
 	lineThree := ""

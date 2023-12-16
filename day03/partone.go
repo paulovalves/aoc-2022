@@ -12,6 +12,8 @@ func readFile() int {
 		panic(err)
 	}
 
+	defer file.Close()
+
 	scanner := bufio.NewScanner(file)
 	result := 0
 	var arr []rune

@@ -14,4 +14,5 @@ func main() {
 	daythree.DayThree()
 	daythree.PartTwo()
 	dayfour.PartOne()
+	dayfour.PartTwo()
 }

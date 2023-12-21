@@ -22,5 +22,6 @@ func main() {
 	dayfive.PartOne()
 	dayfive.PartTwo()
 	daysix.PartOne()
+	daysix.PartTwo()
 	fmt.Println("\nFIM ")
 }

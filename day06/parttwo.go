@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func PartOne() {
+func PartTwo() {
 	file, err := os.Open("day06/part-one-input")
 	if err != nil {
 		log.Fatal(err)
@@ -20,11 +20,11 @@ func PartOne() {
 		text = scanner.Text()
 	}
 
-	pos, result := checkStringSlice(text)
-	fmt.Printf("\nDay 06 Part I: %s - %d", result, pos)
+	pos, result := checkString(text)
+	fmt.Printf("\nDay 06 Part II: %s - %d", result, pos)
 }
 
-func checkStringSlice(text string) (int, string) {
+func checkString(text string) (int, string) {
 	textToCheck := text
 	counter := 0
 	line := ""
@@ -37,18 +37,18 @@ func checkStringSlice(text string) (int, string) {
 		if len(line) == 0 {
 			scan = bufio.NewReader(strings.NewReader(textToCheck))
 		}
-		if len(line) < 4 {
+		if len(line) < 14 {
 			char, _, _ := scan.ReadRune()
 			line = fmt.Sprintf("%s%c", line, char)
 		} else {
-			if len(line) == 4 {
+			if len(line) == 14 {
 				result, unique = checkUniques(line)
 				if unique {
 					position = countPosition(textToCheck, text)
 					return position, result
 				}
 			}
-			if len(textToCheck) < 3 {
+			if len(textToCheck) < 13 {
 				break
 			}
 			counter++
@@ -59,22 +59,4 @@ func checkStringSlice(text string) (int, string) {
 		}
 	}
 	return position, result
-}
-
-func checkUniques(slice string) (string, bool) {
-	for i := 0; i < len(slice); i++ {
-		for j := i + 1; j < len(slice); j++ {
-			if slice[i] == slice[j] {
-				return "", false
-			}
-		}
-	}
-	return slice, true
-}
-
-func countPosition(slice, text string) int {
-	if len(slice) == 4 {
-		return len(text) - len(slice) + 4
-	}
-	return len(text) - len(slice) + 14
 }

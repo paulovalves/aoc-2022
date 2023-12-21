@@ -16,21 +16,16 @@ import (
 //  1   2   3
 
 func PartOne() {
-	// arr, err := parseFile()
 	arr, moves, err := parseInputCrates()
 	if err != nil {
 		fmt.Println(err)
 	}
-	// fmt.Println(arr)
 	r := arrange(arr)
 
-	// fmt.Println(r)
-	// fmt.Println(moves)
 	result := moveCrates(r, moves)
-	// fmt.Println(result)
 	final := getTop(result)
-	fmt.Println("Resultado: ")
-	fmt.Println(final)
+	fmt.Printf("\nDay 05 Part I: %v", final)
+	// fmt.Println(final)
 }
 
 func getTop(arr [][]string) []string {
@@ -77,14 +72,6 @@ func arrange(arr [][]string) [][]string {
 		finalArr = append(finalArr, tempArr)
 	}
 
-	// fmt.Println()
-	// fmt.Println()
-	// fmt.Println(arr)
-	// fmt.Println()
-	// fmt.Println(finalArr)
-	// fmt.Println()
-	// fmt.Println()
-
 	return finalArr
 }
 
@@ -113,10 +100,6 @@ func moveCrates(arr [][]string, moves [][]int) [][]string {
 func newMove(arr [][]string, quantity, stack, destination int) [][]string {
 	var crates []string
 	var maybe []string
-	fmt.Println()
-	fmt.Printf("\nq = %d, s = %d, d = %d", quantity, stack, destination)
-	fmt.Println()
-	fmt.Println(arr)
 	crate := len(arr[stack]) - 1
 
 	for i := quantity; i > 0; i-- {
@@ -128,19 +111,15 @@ func newMove(arr [][]string, quantity, stack, destination int) [][]string {
 		crate--
 	}
 
-	fmt.Printf("Crates = %d, stack = %d\n", len(crates), len(arr[stack]))
 	for i := 0; i < len(crates); i++ {
 		arr[destination] = append(arr[destination], crates[i])
 	}
 	if len(crates) == len(arr[stack]) {
-		fmt.Println(0)
 		arr[stack] = maybe
 	} else if len(crates) < len(arr[stack]) {
-		fmt.Println(2)
 		r := len(arr[stack]) - len(crates)
 		arr[stack] = arr[stack][:r]
 	} else {
-		fmt.Println(3)
 		arr[stack] = arr[stack][quantity:]
 	}
 
@@ -159,8 +138,6 @@ func newMove(arr [][]string, quantity, stack, destination int) [][]string {
 		return arr
 	}
 
-	fmt.Println("Content appended to file.")
-	fmt.Println(arr)
 	return arr
 }
 
@@ -228,7 +205,6 @@ func makeArray(text string) []string {
 	var line string
 	var scan *bufio.Reader
 
-	fmt.Println()
 	for {
 		scan = bufio.NewReader(strings.NewReader(text))
 		for {
@@ -266,9 +242,6 @@ func parseFile() ([][]string, error) {
  1   2   3 
  `
 
-	fmt.Println()
-	fmt.Println()
-	fmt.Println()
 	var lineArr [][]string
 	var tempArr []string
 	scn := bufio.NewReader(strings.NewReader(str))

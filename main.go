@@ -1,6 +1,7 @@
 package main
 
 import (
+	"dayfive"
 	"dayfour"
 	"dayone"
 	"daythree"
@@ -16,5 +17,6 @@ func main() {
 	daythree.PartTwo()
 	dayfour.PartOne()
 	dayfour.PartTwo()
+	dayfive.PartOne()
 	fmt.Println("\nFIM ")
 }
